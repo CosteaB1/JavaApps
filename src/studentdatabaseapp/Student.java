@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Student {
 
-    private String firstName, lastName, courses,studentID;
-    private int  tuitionbalance, gradeYear;
+    private String firstName, lastName, courses ="" , studentID;
+    private int tuitionbalance = 0, gradeYear;
     private static int costOfCourse = 600;
     private static int id = 1000;
 
@@ -20,34 +20,69 @@ public class Student {
 
         System.out.print("1 - freshmen\n2 - for Sophmore\n3 - for Junior\n4 - Senior\nEnter student class level: ");
         this.gradeYear = in.nextInt();
-        System.out.println(firstName + " " + lastName + " " + gradeYear);
+
+        setStudentId();
+
+        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
 
     }
     //Generate ID
 
-    private void setStudentId () {
+    private void setStudentId() {
         // Grade level + static ID
         id++; // 1000 -> 1001 -> 1002-> ...
-        this.studentID= gradeYear + "" + id;
+        this.studentID = gradeYear + "" + id;
     }
 
     //Enroll in courses
 
+    public void enroll() {
+        //get inside a loop, user hits 0
+        do {
+            System.out.print("Enter course to enroll(Q to quit): ");
+            Scanner in = new Scanner(System.in);
+            String course = in.nextLine();
+            if (!course.equals("Q")) {
+                courses = courses + "\n " + course;
+                tuitionbalance = tuitionbalance + costOfCourse;
+            } else {
+                break;
+            }
+
+        } while (1 != 0);
+
+        System.out.println("ENROLLEDIN: " + courses);
+    }
+
     //View balance
+    public void viewBalance() {
+        System.out.println("Your balance is : $" + tuitionbalance);
+    }
 
     // Pay tuition
+    public void payTuition() {
+        viewBalance();
+        System.out.print("Enter your payment: $");
+        Scanner in = new Scanner(System.in);
+        int payment = in.nextInt();
+        tuitionbalance = tuitionbalance - payment;
+        System.out.println("Thank you for your payment of $" + payment);
+        viewBalance();
+
+    }
 
     //Show status
+
+    public String showInfo() {
+        return  "Name: "+ firstName + " " + lastName +
+                "\nGrade level: " + gradeYear +
+                "\nStudent ID: " + studentID +
+                "\nCourses Enrolled: " + courses +
+                "\nBalance: $" + tuitionbalance;
+
+    }
 
 
 }
 
 
-// Application to manage student enrollments and balance.
-// Ask the user how many new students will be added to the database.
-//The User should be prompted t enter the name and year of each student.
-//The student should have 5-digit unique ID, with the first number being their grade level.
-//A student can en enroll in the following courses: History 101, Mathematics 101, English 101, Chemistry 101, Computer SCience 101.
-// Each course cost $600 to enroll.
-//The student should be able to view their balance and pay.
-//To see the status of the student, we should see their name,ID,courses enrolled and balance.
