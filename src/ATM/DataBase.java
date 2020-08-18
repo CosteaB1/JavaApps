@@ -45,7 +45,7 @@ public class DataBase {
             if (rset.next()) {
                 username_1[i] = rset.getString("userName");
                 pass_1[i] = rset.getString("pass");
-                System.out.println(username_1[i] + " " + pass_1[i]);
+//                System.out.println(username_1[i] + " " + pass_1[i]);
             }
         }
         for (int i = 0; i < 3; i++) {
@@ -53,10 +53,13 @@ public class DataBase {
                 System.out.println("Login Successfully");
                 break;
             }
-            // Need to solve on Error
         }
 
-
+//        for (int i = 0; i < 3; i++) {
+//            if (!username.equals(username_1[i]) || !pass.equals(pass_1[i])) {
+//                System.out.println("Login or password is incorrect");
+//            }
+//        }
     }
 
 
