@@ -1,28 +1,27 @@
 package SimpleExercise;
+
+import java.util.Arrays;
+
 public class Array extends Exercises {
 
 
     public static void main(String[] args) {
-
-//        int[] newArr = new int[intArr.length];
-////        System.out.println("Index position of 3 is: " + findIndex(intArr, 3));
-////        removeElement(intArr, 3);
-////        copyArray(intArr, newArr);
-//        insertSpecificPosition(intArr,1,100 );
-//        int arr[] = {1,2,2,3,4,4,4,5,2,2,3,4,1};
-//        int n = arr.length;
-//        n = removeDuplicates(arr,n);
-//        for (int i=0; i<n; i++)
-//            System.out.print(arr[i]+" ");
-//        String s = "aaaaabbbbbccccdddd";
-//        prinRLE(s);
-//        int number = 5, result;
-//        result = factorial(number);
-//        System.out.println("factorial of: " + number + " is: " + result);
-
-        int[] myArr = {1,2,3,4,5,6,7,8,9,10};
+        String[] myArrString = {"bcd", "abd", "jude", "bcd", "oiu", "gzw", "oiu"};
+        String[] array1 = {"Python", "JAVA", "PHP", "C#", "C++", "SQL"};
+        int[] array11 = {1, 2, 5, 5, 8, 9, 7, 10};
+        int[] array22 = {1, 0, 6, 15, 6, 4, 7, 0};
+        String[] array2 = {"MySQL", "SQL", "SQLite", "Oracle", "PostgreSQL", "DB2", "JAVA"};
+        int[] myArr = {5, 5, 2, 6, 7, 4, 2, 8, 9, 9};
+//        System.out.println("Original String : " + Arrays.toString(myArr));
 //        maxMinArray(myArr);
-        reverse(myArr);
+//        reverse(myArr);
+//        findDuplicates(myArr);
+//        findDuplicatesString(myArrString);
+//        commonElements(array1,array2);
+//        commonElementsIntegers(array11,array22);
+//        removeDuplicates(myArr);
+        secondLargestElement(myArr);
+        secondSmallestElement(myArr);
     }
 
 }

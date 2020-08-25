@@ -1,10 +1,88 @@
 package SimpleExercise;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class Exercises {
-    //11. Write a Java program to reverse an array of integer values. Go to the editor
+    //19. Write a Java program to add two matrices of the same size. Go to the editor
+    public static void addTwoMatrice () {
 
+    }
+    //18. Write a Java program to find the second smallest element in an array. Go to the editor
+    public static void secondSmallestElement (int[] arr) {
+        Arrays.sort(arr);
+        int i =0;
+        while (arr[0] == arr[i]) {
+            i++;
+        }
+        System.out.println("Second Smallest element: " + arr[i]);
+    }
+    //17. Write a Java program to find the second largest element in an array. Go to the editor
+    public static void secondLargestElement(int[] arr) {
+        int n = arr.length-1;
+        Arrays.sort(arr);
+        while (arr[n] == arr[arr.length-1]) {
+            n--;
+        }
+        System.out.println("Second largest value: " + arr[n]);
+    }
+
+    //16. Write a Java program to remove duplicate elements from an array. Go to the editor
+    public static void removeDuplicates(int[] arr) {
+    }
+    //15. Write a Java program to find the common elements between two arrays of integers. Go to the editor
+
+    public static void commonElementsIntegers(int[] first, int[] second) {
+        HashSet<Integer> set = new HashSet<Integer>();
+        for (int i = 0; i < first.length; i++) {
+            for (int j = 0; j < second.length; j++) {
+                if (first[i] == second[j]) {
+                    set.add(first[i]);
+                }
+            }
+        }
+        System.out.println("Common elements are: " + (set));
+    }
+
+    //14. Write a Java program to find the common elements between two arrays (string values). Go to the editor
+    public static void commonElements(String[] first, String[] secondArr) {
+        HashSet<String> set = new HashSet<String>();
+
+        for (int i = 0; i < first.length; i++) {
+            for (int j = 0; j < secondArr.length; j++) {
+                if (first[i].equals(secondArr[j])) {
+                    set.add(first[i]);
+                }
+            }
+        }
+        System.out.println("Common elements: " + (set));
+    }
+
+    //13. Write a Java program to find the duplicate values of an array of string values. Go to the editor
+    public static void findDuplicatesString(String[] myArrString) {
+        int n = myArrString.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if ((myArrString[i].equals(myArrString[j])) && (i != j)) {
+                    System.out.println("Duplicates values of a string: " + myArrString[i]);
+                }
+            }
+        }
+    }
+
+    //12. Write a Java program to find the duplicate values of an array of integer values. Go to the editor
+    public static void findDuplicates(int[] myArr) {
+        int n = myArr.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if ((myArr[i] == myArr[j]) && (i != j)) {
+                    System.out.println("We have dublicates for: " + myArr[i]);
+                }
+            }
+        }
+    }
+
+    //11. Write a Java program to reverse an array of integer values. Go to the editor
     public static void reverse(int[] myArr) {
         System.out.println("Original String : " + Arrays.toString(myArr));
         int n = myArr.length;
